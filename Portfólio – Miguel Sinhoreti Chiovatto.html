@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Miguel Sinhoreti Chiovatto – Portfólio de TI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDF1F6; --surface:#FFFFFF; --ink:#13202F; --muted:#51606F; --line:#CBD5E1; --accent:#1E58B8; --accent-ink:#FFFFFF;
+  --head:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif; --body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0E1621; --surface:#162231; --ink:#E7EEF6; --muted:#9FB0C2; --line:#2A3A4D; --accent:#79ADFF; --accent-ink:#0E1621; color-scheme:dark;}
+}
+:root[data-theme="dark"]{--bg:#0E1621; --surface:#162231; --ink:#E7EEF6; --muted:#9FB0C2; --line:#2A3A4D; --accent:#79ADFF; --accent-ink:#0E1621; color-scheme:dark;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--body)}
+a{color:var(--accent)}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0}
+nav{display:flex;gap:1.5rem;flex-wrap:wrap;padding:1.25rem 0;font-weight:600}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--accent)}
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:2rem;align-items:center;padding:3rem 0 4rem}
+.hero h1{font-size:clamp(2.6rem,7vw,5rem);font-weight:800;letter-spacing:-.03em}
+.role{font-family:var(--head);font-weight:500;font-size:1.35rem;margin:1.25rem 0 .5rem}
+.lead{color:var(--muted);max-width:34rem;margin:0 0 1.75rem}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.7rem 1.2rem;border-radius:8px;font-weight:600;text-decoration:none;border:2px solid var(--accent)}
+.btn.main{background:var(--accent);color:var(--accent-ink)}
+.btn.alt{color:var(--accent)}
+.topo{width:100%;height:auto;color:var(--accent)}
+.topo .ln{stroke:var(--line);stroke-width:2}
+.topo .nd{fill:var(--surface);stroke:currentColor;stroke-width:2.5}
+.topo .core{fill:currentColor}
+.topo text{fill:var(--muted);font:600 13px var(--body)}
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;margin-bottom:1.75rem;letter-spacing:-.02em}
+.about{max-width:42rem;font-size:1.15rem}
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem 3rem;margin:0}
+.skills dt{font-family:var(--head);font-weight:700;font-size:1.25rem;margin-bottom:.35rem}
+.skills dd{margin:0;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:.5rem 0 0;list-style:none}
+.tags li{background:var(--surface);border:1px solid var(--line);color:var(--ink);padding:.2rem .7rem;border-radius:999px;font-size:.95rem}
+.tl{list-style:none;margin:0;padding:0 0 0 1.75rem;border-left:3px solid var(--accent)}
+.tl>li{position:relative;padding-bottom:2.25rem}
+.tl>li::before{content:"";position:absolute;left:calc(-1.75rem - 9px);top:.45rem;width:15px;height:15px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.tl h3{font-size:1.4rem}
+.when{color:var(--muted);font-weight:600;margin:.2rem 0 .6rem}
+.tl ul{margin:.5rem 0 0;padding-left:1.1rem;color:var(--muted)}
+.tl ul b{color:var(--ink)}
+.edu{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.edu div{border-left:3px solid var(--line);padding-left:1rem}
+.edu h3{font-size:1.2rem;margin-bottom:.25rem}
+.edu p{margin:0;color:var(--muted)}
+.contact p{max-width:36rem;color:var(--muted)}
+.contact ul{list-style:none;padding:0;margin:1.25rem 0 0;display:grid;gap:.5rem;font-size:1.15rem}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem;border-top:1px solid var(--line)}
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;padding-top:1.5rem}
+  .skills,.edu{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Seções">
+    <a href="#sobre">Sobre</a><a href="#competencias">Competências</a><a href="#experiencia">Experiência</a><a href="#formacao">Formação</a><a href="#contato">Contato</a>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <h1>Miguel Sinhoreti Chiovatto</h1>
+      <p class="role">Profissional de TI Júnior</p>
+      <p class="lead">Suporte de infraestrutura e apoio em sistemas, com formação em Segurança Cibernética e quatro anos de rotina em ambiente de produção.</p>
+      <div class="btns">
+        <a class="btn main" href="mailto:miguelsinhoretiss@gmail.com">Enviar e-mail</a>
+        <a class="btn alt" href="https://linkedin.com/in/miguelsinhoreti">LinkedIn</a>
+      </div>
+    </div>
+    <svg class="topo" viewBox="0 0 360 300" role="img" aria-label="Diagrama de rede: um servidor central conectado a quatro pontos">
+      <line class="ln" x1="180" y1="150" x2="60" y2="60"/><line class="ln" x1="180" y1="150" x2="300" y2="60"/>
+      <line class="ln" x1="180" y1="150" x2="60" y2="240"/><line class="ln" x1="180" y1="150" x2="300" y2="240"/>
+      <circle class="nd" cx="60" cy="60" r="22"/><circle class="nd" cx="300" cy="60" r="22"/>
+      <circle class="nd" cx="60" cy="240" r="22"/><circle class="nd" cx="300" cy="240" r="22"/>
+      <circle class="core" cx="180" cy="150" r="34"/>
+      <text x="60" y="104" text-anchor="middle">Redes</text><text x="300" y="104" text-anchor="middle">Linux</text>
+      <text x="60" y="284" text-anchor="middle">VMware</text><text x="300" y="284" text-anchor="middle">Docker</text>
+    </svg>
+  </header>
+
+  <section id="sobre">
+    <h2>Sobre mim</h2>
+    <p class="about">Estudo Segurança Cibernética no SENAI, com conclusão prevista para dezembro de 2026. Tenho base em redes, Linux, virtualização e monitoramento de vulnerabilidades. Nos últimos quatro anos trabalhei em ambiente de produção, com prazos, controle de qualidade e comunicação com a equipe. Busco crescer na área de tecnologia com proatividade e organização.</p>
+  </section>
+
+  <section id="competencias">
+    <h2>Competências</h2>
+    <dl class="skills">
+      <div><dt>Infraestrutura e redes</dt><dd><ul class="tags"><li>Configuração de redes</li><li>Linux</li><li>VMware</li><li>Docker</li></ul></dd></div>
+      <div><dt>Segurança</dt><dd><ul class="tags"><li>Cibersegurança</li><li>Monitoramento de vulnerabilidades</li></ul></dd></div>
+      <div><dt>Documentação</dt><dd><ul class="tags"><li>Documentação técnica</li><li>Registro de achados e recomendações</li></ul></dd></div>
+      <div><dt>Comportamentais</dt><dd><ul class="tags"><li>Organização</li><li>Boa comunicação</li><li>Proatividade</li><li>Priorização de demandas</li><li>Trabalho em equipe</li></ul></dd></div>
+    </dl>
+  </section>
+
+  <section id="experiencia">
+    <h2>Experiência profissional</h2>
+    <ol class="tl">
+      <li>
+        <h3>Técnico júnior de TI</h3>
+        <p class="when">Folhinas.com (gráfica) · 02/2026 – 09/2026</p>
+        <ul>
+          <li><b>Progressão interna:</b> organização de demandas, prioridades e prazos de produção.</li>
+          <li><b>Controle de qualidade:</b> conferência técnica de arquivos e serviços.</li>
+          <li><b>Comunicação:</b> orientação da equipe e alinhamento entre áreas.</li>
+        </ul>
+      </li>
+      <li>
+        <h3>Estagiário de TI</h3>
+        <p class="when">Folhinas.com (gráfica) · 09/2022 – 02/2026</p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="formacao">
+    <h2>Formação e idiomas</h2>
+    <div class="edu">
+      <div><h3>Tecnólogo em Segurança Cibernética</h3><p>SENAI · previsão de conclusão em 12/2026</p></div>
+      <div><h3>Técnico em Jogos Digitais</h3><p>SENAI · concluído</p></div>
+      <div><h3>Inglês</h3><p>Nível intermediário</p></div>
+    </div>
+  </section>
+
+  <section id="contato" class="contact">
+    <h2>Contato</h2>
+    <p>Estou em busca de uma vaga de TI júnior em suporte de infraestrutura ou apoio em sistemas. Vamos conversar.</p>
+    <ul>
+      <li><a href="mailto:miguelsinhoretiss@gmail.com">miguelsinhoretiss@gmail.com</a></li>
+      <li><a href="tel:+5511978761710">(11) 97876-1710</a></li>
+      <li><a href="https://linkedin.com/in/miguelsinhoreti">linkedin.com/in/miguelsinhoreti</a></li>
+      <li>Santo André – SP</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 Miguel Sinhoreti Chiovatto</footer>
+</div>
+</body>
+</html>
